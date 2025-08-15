@@ -1,3 +1,5 @@
+package HUAWEI25;
+
 import java.util.*;
 public class HUAWEI051403 {
     public static void main(String[] args) {

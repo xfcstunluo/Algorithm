@@ -1,3 +1,5 @@
+package HUAWEI25;
+
 import java.util.*;
 public class HUAWEI052102 {
     static int minLen=Integer.MAX_VALUE;

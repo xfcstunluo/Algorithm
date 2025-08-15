@@ -1,3 +1,5 @@
+package HUAWEI25;
+
 import java.util.*;
 public class HUAWEI050703 {
     static int[][] Mapping={{1,0},{0,1}};

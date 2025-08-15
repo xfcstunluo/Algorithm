@@ -1,3 +1,5 @@
+package HUAWEI25;
+
 import java.util.*;
 import java.util.stream.Collectors;
 public class HUAWEI042301 {

@@ -1,3 +1,5 @@
+package HUAWEI25;
+
 import java.util.*;
 public class HUAWEI061102 {
     //邻接表，出度数组，父节点编号数组，节点深度

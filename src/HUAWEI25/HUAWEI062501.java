@@ -1,3 +1,5 @@
+package HUAWEI25;
+
 import java.util.*;
 public class HUAWEI062501 {
     public static int[][] dirs={{1,0},{-1,0},{0,1},{0,-1}};
