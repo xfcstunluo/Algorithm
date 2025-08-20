@@ -32,6 +32,7 @@ public class HUAWEI050702 {
     }
 
     public static int[] dfs(TreeNode node){
+        //空节点可以看作已经被覆盖，要么被父节点覆盖，要么被子节点覆盖，开销为0；
         if(node==null) return new int[]{INF,0,0};
         //三个值表示开销。当节点是叶子结点时，若它自己是基站，dp[0]=1;若它是被子节点或者父节点覆盖的，ga该点的开销应该是0.
         if(node.left==null&&node.right==null) return new int[]{1,INF,0};
