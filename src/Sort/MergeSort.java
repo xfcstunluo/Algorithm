@@ -11,6 +11,7 @@ public class MergeSort {
         System.out.println(Arrays.toString(tmp));
     }
     public static void mergeSort(int[] arr,int[] tmp,int l,int r){
+        //tmp、l>=r、m、剪枝、3个while
         if(l>=r) return;
         int m=l+(r-l)/2;
         mergeSort(arr,tmp,l,m);
@@ -24,6 +25,5 @@ public class MergeSort {
         while(i<=m) tmp[k++]=arr[i++];
         while(j<=r) tmp[k++]=arr[j++];
         for(int p=l;p<=r;p++) arr[p]=tmp[p];
-        return;
     }
 }

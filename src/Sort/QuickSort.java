@@ -9,6 +9,7 @@ public class QuickSort {
         }
     }
     public static void quickSort(int[] nums,int left,int right){
+        //l>=r判断、1个pivot，3个while
         if(left>=right) return;
         int pivot=patition(nums,left,right);
         quickSort(nums,left,pivot-1);
