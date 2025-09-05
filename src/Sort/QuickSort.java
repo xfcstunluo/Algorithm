@@ -9,7 +9,7 @@ public class QuickSort {
         }
     }
     public static void quickSort(int[] nums,int left,int right){
-        //l>=r判断、1个pivot，3个while
+        //l>=r；1个pivot patition；3个while(i<=j) swap
         if(left>=right) return;
         int pivot=patition(nums,left,right);
         quickSort(nums,left,pivot-1);
@@ -18,7 +18,7 @@ public class QuickSort {
     public static int patition(int[] nums,int left,int right){
         int i=left+1,j=right;
         while(i<=j){
-            while (i<=right&&nums[left]>=nums[i]) i++;
+            while(i<=right&&nums[left]>=nums[i]) i++;
             while(j>=left+1&&nums[left]<=nums[j]) j--;
             if(i<j) swap(nums,i,j);
         }

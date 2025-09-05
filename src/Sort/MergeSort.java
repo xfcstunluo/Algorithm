@@ -11,12 +11,10 @@ public class MergeSort {
         System.out.println(Arrays.toString(tmp));
     }
     public static void mergeSort(int[] arr,int[] tmp,int l,int r){
-        //tmp、l>=r、m、剪枝、3个while
         if(l>=r) return;
         int m=l+(r-l)/2;
         mergeSort(arr,tmp,l,m);
         mergeSort(arr,tmp,m+1,r);
-        if(arr[m]<arr[m+1]) return;
         int i=l,j=m+1,k=l;
         while(i<=m&&j<=r){
             if(arr[i]<=arr[j]) tmp[k++]=arr[i++];
