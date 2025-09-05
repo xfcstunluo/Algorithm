@@ -1,82 +1,49 @@
 package Interview;
-import java.util.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class CreateMQ {
     //队列最大长度
     static private int queueSize=10;
-    static private Deque<Integer> q=new ArrayDeque<>();
+    static private final BlockingQueue<Integer> q=new LinkedBlockingQueue<>(queueSize);
+    static final AtomicInteger SEQ = new AtomicInteger(1);
     public static void main(String[] args) {
-        CreateMQ mq=new CreateMQ();
-        Consumer consumer=new Consumer();
-        consumer.start();
-        //创建生产者线程
-        for(int i=0;i<10;i++){
-            Producer producer=new Producer();
-            producer.start();
+        new Thread(new Consumer(), "Consumer").start();
+        for(int i=1;i<=2;i++){
+            new Thread(new Producer(), "Producer").start();
         }
     }
 
     //生产者
-    static class Producer extends Thread{
+    static class Producer implements Runnable{
         @Override
         public void run() {
-            synchronized (q) {
-                //判断当前队列长度是否小于最大长度
-                //若小于，往队列添加消息，唤醒消费者；
-                //若大于，wait
-                if(q.size()<queueSize){
-                    //模拟加入任务
-                    q.offer(q.size()+1);
-                    System.out.println("生产者往队列中加入消息，当前长度："+q.size());
-                    //模拟业务处理
-                    try {
-                        Thread.sleep(1000);
-                    }catch (InterruptedException e){
-                        e.printStackTrace();
-                    }
-                    q.notify();
-                }else{
-                    try {
-                        q.wait();
-                    }catch (InterruptedException e) {
-                        e.printStackTrace();
-                        q.notify();
-                    }
+            try{
+                for (int i = 0; i < 10; i++){
+                    int p=SEQ.getAndIncrement();
+                    q.put(p);
+                    System.out.println(Thread.currentThread().getName()+"生产:"+p+"队列长度="+q.size());
+                    Thread.sleep(200);
                 }
+            }catch (InterruptedException e){
+                Thread.currentThread().interrupt();
             }
         }
     }
 
     //创建消费者
-    static class Consumer extends Thread{
+    static class Consumer implements Runnable{
         @Override
         public void run() {
-            //消费者需要重复工作
-            while(true){
-                //保证消费过程线程安全
-                synchronized(q){
-                    //若队列为空，消费者睡眠
-                    if(q.isEmpty()){
-                        System.out.println("当前队列为空");
-                        try{
-                            q.wait();
-                        }catch (InterruptedException e){
-                            e.printStackTrace();
-                            //一旦出现异常，手动唤醒
-                            q.notify();
-                        }
-                    }else{
-                        //消费
-                        Integer val=q.poll();
-                        System.out.println("消费者往队列中消费了消息："+val+"，队列当前长度："+q.size());
-                        //唤醒生产者继续生产
-                        q.notify();
-                        try {
-                            Thread.sleep(1000);
-                        }catch (InterruptedException e){
-                            e.printStackTrace();
-                        }
-                    }
+            try{
+                while(true){
+                    Integer c=q.take();
+                    System.out.println(Thread.currentThread().getName()+"消费:"+c+"队列长度="+q.size());
+                    Thread.sleep(200);
                 }
+            }catch (InterruptedException e){
+                Thread.currentThread().interrupt();
             }
         }
     }
