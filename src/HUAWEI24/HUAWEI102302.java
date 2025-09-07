@@ -29,6 +29,7 @@ public class HUAWEI102302 {
         int l=2*i+1,r=2*i+2;
         boolean hasL=(l<n)&&(arr[l]!=0);
         boolean hasR=(r<n)&&(arr[r]!=0);
+        //只能自底向上影响
         if(!hasL&&!hasR) return new int[]{1,INF,0};
         int[] L=dfs(2*i+1);
         int[] R=dfs(2*i+2);

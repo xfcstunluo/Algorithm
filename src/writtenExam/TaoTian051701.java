@@ -1,3 +1,5 @@
+package writtenExam;
+
 import java.util.*;
 public class TaoTian051701 {
     public static void main(String[] args) {

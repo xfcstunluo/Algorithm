@@ -146,6 +146,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[42]接雨水.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[42]接雨水.md" />
+              <option name="frontendQuestionId" value="leetcode.cn42" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[42]接雨水.java" />
+              <option name="titleSlug" value="trapping-rain-water" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../leetcode-idea-plugins/leetcode/editor/cn/[183]从不订购的客户.java">
           <value>
             <LeetcodeEditor>

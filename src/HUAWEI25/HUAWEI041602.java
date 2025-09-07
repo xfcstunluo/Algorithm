@@ -11,6 +11,7 @@ public class HUAWEI041602 {
         //A B C D F
         //C E G H
         //<C,<0,1>>
+        //给定一张图，边权只有0/1，求最短路径：01BFS
         Map<String,Set<Integer>> stationToLines = new HashMap<>();
         List<List<String>> lines = new ArrayList<>();
         for (int i = 0; i < n; i++) {

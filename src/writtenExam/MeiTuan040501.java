@@ -1,3 +1,5 @@
+package writtenExam;
+
 import java.util.*;
 public class MeiTuan040501 {
     public static void main(String[] args) {

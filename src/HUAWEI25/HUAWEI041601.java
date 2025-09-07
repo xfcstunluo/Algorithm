@@ -23,6 +23,7 @@ public class HUAWEI041601 {
         int target=(1<<j)-1;
         int ans=Integer.MAX_VALUE;
         //二进制枚举选取哪些测试用例子集
+        //选哪些行
         for(int k=0; k<(1<<i); k++){
             int unionMask=0;
             int cnt=0;

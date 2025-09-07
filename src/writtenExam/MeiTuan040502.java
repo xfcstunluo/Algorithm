@@ -1,3 +1,5 @@
+package writtenExam;
+
 import java.util.*;
 public class MeiTuan040502 {
     public static int N=5000000;
