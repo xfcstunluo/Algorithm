@@ -1,31 +1,36 @@
 package writtenExam.MeiTuan;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 public class MeiTuan091301 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //n个节点，初始都是白色，q次操作。
-        //u，v路径上的所有点都染红；
-        //节点数
-        int n = sc.nextInt();
-        //操作次数
-        int q = sc.nextInt();
-        int[][] color= new int[n][n];
-        for(int i = 1; i <n; i++){
-            int u=sc.nextInt();
-            int v=sc.nextInt();
-            color[u-1][v-1]=1;
-            color[v-1][u-1]=1;
+        //构造长度为n的排列，任意位置i，与ai亦或为奇数
+        //排列：由1~n每个数按任意位置组成
+        int T=sc.nextInt();
+        while(T-->0){
+            int n = sc.nextInt();
+            //只要n为偶数，亦或的结果一定有奇数，反之一定是偶数，偶数只要输出排列两两交换
+            if(n%2==1) System.out.println("-1");
+            else{
+                int[] nums = new int[n];
+                int k=1;
+                for(int i=0;i<n;i++){
+                    nums[i]=k++;
+                }
+                for(int i=0;i<n;i+=2){
+                    int tmp=nums[i];
+                    nums[i]=nums[i+1];
+                    nums[i+1]=tmp;
+                }
+                List<Integer> list = new ArrayList<>();
+                for(int i=0;i<n;i++){
+                    list.add(nums[i]);
+                }
+                System.out.println(list.stream().map(String::valueOf).collect(Collectors.joining(" ")));
+            }
         }
-        List<int[]> colorList = new ArrayList<>();
-        for(int i = 1; i <=q; i++){
-            int u=sc.nextInt();
-            int v=sc.nextInt();
-            colorList.add(new int[]{u,v});
-        }
-        //取出u，v，从u到v的路线上经历的所有节点都要=2；
-
-
-        //输出：多少个红色连通块？岛屿（任意两个顶点有边相连，）
+        //输出：存在则输出任意一个满足条件的排列，不满足输出-1；
     }
 }

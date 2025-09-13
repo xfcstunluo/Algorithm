@@ -1,7 +1,10 @@
+package writtenExam.MeiTuan;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class reList {
+//直接用数组，不用双端队列
+public class MeiTuan091302 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //两个长度都为n的数组a，b，对两个数组进行任意重排为a‘，b’，记di=a'i-b'i;
