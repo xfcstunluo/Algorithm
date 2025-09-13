@@ -1,3 +1,5 @@
+package writtenExam;
+
 import java.util.*;
 public class line {
     public static void main(String[] args) {
