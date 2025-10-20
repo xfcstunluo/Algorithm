@@ -190,6 +190,39 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[33]搜索旋转排序数组.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[33]搜索旋转排序数组.md" />
+              <option name="frontendQuestionId" value="leetcode.cn33" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[33]搜索旋转排序数组.java" />
+              <option name="titleSlug" value="search-in-rotated-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[34]在排序数组中查找元素的第一个和最后一个位置.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[34]在排序数组中查找元素的第一个和最后一个位置.md" />
+              <option name="frontendQuestionId" value="leetcode.cn34" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[34]在排序数组中查找元素的第一个和最后一个位置.java" />
+              <option name="titleSlug" value="find-first-and-last-position-of-element-in-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[35]搜索插入位置.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[35]搜索插入位置.md" />
+              <option name="frontendQuestionId" value="leetcode.cn35" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[35]搜索插入位置.java" />
+              <option name="titleSlug" value="search-insert-position" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[39]组合总和.java">
           <value>
             <LeetcodeEditor>
@@ -234,6 +267,39 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[56]合并区间.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[56]合并区间.md" />
+              <option name="frontendQuestionId" value="leetcode.cn56" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[56]合并区间.java" />
+              <option name="titleSlug" value="merge-intervals" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[74]搜索二维矩阵.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[74]搜索二维矩阵.md" />
+              <option name="frontendQuestionId" value="leetcode.cn74" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[74]搜索二维矩阵.java" />
+              <option name="titleSlug" value="search-a-2d-matrix" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[76]最小覆盖子串.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[76]最小覆盖子串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn76" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[76]最小覆盖子串.java" />
+              <option name="titleSlug" value="minimum-window-substring" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[78]子集.java">
           <value>
             <LeetcodeEditor>
@@ -259,10 +325,10 @@
         <entry key="$PROJECT_DIR$/../../leetcode-idea-plugins/leetcode/editor/cn/[35]搜索插入位置.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/../../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[35]搜索插入位置.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/doc/content/[35]搜索插入位置.md" />
               <option name="frontendQuestionId" value="leetcode.cn35" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/../../leetcode-idea-plugins/leetcode/editor/cn/[35]搜索插入位置.java" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode-idea-plugins/leetcode/editor/cn/[35]搜索插入位置.java" />
               <option name="titleSlug" value="search-insert-position" />
             </LeetcodeEditor>
           </value>
