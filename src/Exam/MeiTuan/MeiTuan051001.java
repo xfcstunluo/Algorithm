@@ -1,4 +1,4 @@
-package Exam;
+package Exam.MeiTuan;
 
 import java.util.*;
 public class MeiTuan051001 {

@@ -1,5 +1,7 @@
+package Exam.PDD;
+
 import java.util.*;
-public class Chrismes {
+public class PDD092802 {
     public static int num=0;
     public static int n;
     public static int[] inital;
