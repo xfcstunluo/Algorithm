@@ -1,5 +1,6 @@
+package WrittenExam.RedNote;//每日一题
 import java.util.*;
-public class sortArray {
+public class RedNote25092102 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
