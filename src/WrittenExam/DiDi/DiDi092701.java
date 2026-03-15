@@ -2,7 +2,7 @@ package WrittenExam.DiDi;
 
 import java.util.*;
 
-public class rDiDi092701 {
+public class DiDi092701 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //[a,b]表示应当考虑的进制区间

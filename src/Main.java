@@ -1,16 +1,8 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-import java.util.*;
-//public class Main {
-//    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//
-//}
-
 //import java.io.*;
 //import java.util.*;
 //
 //public class Main {
+//
 //    static class FastScanner {
 //        private final InputStream in = System.in;
 //        private final byte[] buffer = new byte[1 << 16];
@@ -25,7 +17,7 @@ import java.util.*;
 //            return buffer[ptr++];
 //        }
 //
-//        long nextLong() throws IOException {
+//        int nextInt() throws IOException {
 //            int c;
 //            do {
 //                c = read();
@@ -37,144 +29,80 @@ import java.util.*;
 //                c = read();
 //            }
 //
-//            long val = 0;
+//            int val = 0;
 //            while (c > ' ') {
 //                val = val * 10 + (c - '0');
 //                c = read();
 //            }
 //            return val * sign;
 //        }
-//
-//        int nextInt() throws IOException {
-//            return (int) nextLong();
-//        }
 //    }
 //
 //    public static void main(String[] args) throws Exception {
 //        FastScanner fs = new FastScanner();
-//        int n = fs.nextInt();
+//        StringBuilder out = new StringBuilder();
 //
-//        long[] a = new long[n + 1];
-//        for (int i = 1; i <= n; i++) {
-//            a[i] = fs.nextLong();
-//        }
+//        int T = fs.nextInt();
+//        while (T-- > 0) {
+//            int n = fs.nextInt();
 //
-//        // 前缀和，严格递增（因为 a[i] > 0）
-//        long[] ps = new long[n + 1];
-//        for (int i = 1; i <= n; i++) {
-//            ps[i] = ps[i - 1] + a[i];
-//        }
-//
-//        // 预处理相等段边界
-//        int[] leftRun = new int[n + 1];
-//        int[] rightRun = new int[n + 1];
-//
-//        leftRun[1] = 1;
-//        for (int i = 2; i <= n; i++) {
-//            if (a[i] == a[i - 1]) {
-//                leftRun[i] = leftRun[i - 1];
-//            } else {
-//                leftRun[i] = i;
+//            int[] childCount = new int[n + 1];
+//            for (int i = 2; i <= n; i++) {
+//                int p = fs.nextInt();
+//                childCount[p]++;
 //            }
-//        }
 //
-//        rightRun[n] = n;
-//        for (int i = n - 1; i >= 1; i--) {
-//            if (a[i] == a[i + 1]) {
-//                rightRun[i] = rightRun[i + 1];
-//            } else {
-//                rightRun[i] = i;
-//            }
-//        }
-//
-//        int INF = (int) 1e9;
-//        int[] ans = new int[n + 1];
-//
-//        for (int i = 1; i <= n; i++) {
-//            int best = INF;
-//
-//            // ---------- 从左边找 ----------
-//            if (i > 1 && ps[i - 1] > a[i]) {
-//                // 找最短 [l..i-1]，使 sum(l..i-1) > a[i]
-//                // 即 ps[i-1] - ps[l-1] > a[i]
-//                // => ps[l-1] < ps[i-1] - a[i]
-//                long target = ps[i - 1] - a[i];
-//                int l = lowerBound(ps, 0, i - 1, target); // l 即区间起点
-//                int len = i - l; // [l..i-1] 长度
-//
-//                // 如果长度>=2且全相等，则需要再往左扩1个不同值
-//                if (len >= 2 && l >= leftRun[i - 1]) {
-//                    if (leftRun[i - 1] > 1) {
-//                        l = leftRun[i - 1] - 1;
-//                        len = i - l;
-//                    } else {
-//                        len = INF;
-//                    }
+//            ArrayList<Integer> list = new ArrayList<>();
+//            for (int i = 1; i <= n; i++) {
+//                if (childCount[i] > 0) {
+//                    list.add(childCount[i]);
 //                }
-//
-//                best = Math.min(best, len);
 //            }
 //
-//            // ---------- 从右边找 ----------
-//            if (i < n && ps[n] - ps[i] > a[i]) {
-//                // 找最短 [i+1..r]，使 sum(i+1..r) > a[i]
-//                // 即 ps[r] - ps[i] > a[i]
-//                // => ps[r] > ps[i] + a[i]
-//                long target = ps[i] + a[i];
-//                int r = upperBound(ps, i + 1, n, target);
-//                int len = r - i; // [i+1..r] 长度
+//            // 降序排序，优先启动大的孩子集合
+//            list.sort(Collections.reverseOrder());
 //
-//                // 如果长度>=2且全相等，则需要再往右扩1个不同值
-//                if (len >= 2 && r <= rightRun[i + 1]) {
-//                    if (rightRun[i + 1] < n) {
-//                        r = rightRun[i + 1] + 1;
-//                        len = r - i;
-//                    } else {
-//                        len = INF;
-//                    }
+//            int m = list.size();
+//            int[] cnt = new int[m + 1];
+//            for (int i = 1; i <= m; i++) {
+//                cnt[i] = list.get(i - 1);
+//            }
+//
+//            int left = 0, right = n, ans = n;
+//
+//            while (left <= right) {
+//                int mid = (left + right) >>> 1;
+//                if (check(mid, n, cnt, m)) {
+//                    ans = mid;
+//                    right = mid - 1;
+//                } else {
+//                    left = mid + 1;
 //                }
-//
-//                best = Math.min(best, len);
 //            }
 //
-//            ans[i] = (best == INF ? -1 : best);
+//            out.append(ans).append('\n');
 //        }
 //
-//        StringBuilder sb = new StringBuilder();
-//        for (int i = 1; i <= n; i++) {
-//            if (i > 1) sb.append(' ');
-//            sb.append(ans[i]);
-//        }
-//        System.out.println(sb);
+//        System.out.print(out);
 //    }
 //
-//    // 在 ps[left..right] 中找第一个 >= target 的位置
-//    static int lowerBound(long[] ps, int left, int right, long target) {
-//        int l = left, r = right, ans = right + 1;
-//        while (l <= r) {
-//            int mid = (l + r) >>> 1;
-//            if (ps[mid] >= target) {
-//                ans = mid;
-//                r = mid - 1;
-//            } else {
-//                l = mid + 1;
-//            }
-//        }
-//        return ans;
-//    }
+//    static boolean check(int T, int n, int[] cnt, int m) {
+//        // 至少要有一次点名根
+//        if (T == 0) return false;
 //
-//    // 在 ps[left..right] 中找第一个 > target 的位置
-//    static int upperBound(long[] ps, int left, int right, long target) {
-//        int l = left, r = right, ans = right + 1;
-//        while (l <= r) {
-//            int mid = (l + r) >>> 1;
-//            if (ps[mid] > target) {
-//                ans = mid;
-//                r = mid - 1;
-//            } else {
-//                l = mid + 1;
-//            }
+//        int available = T - 1; // 除去点名根后，剩下可用于孩子集合的点名次数
+//        int g = Math.min(available, m);
+//
+//        long base = 0;
+//        for (int i = 1; i <= g; i++) {
+//            // 第 i 个集合在第 i 次时刻被启动
+//            base += Math.min(cnt[i], 1 + (T - i));
 //        }
-//        return ans;
+//
+//        long extra = Math.max(0, available - m);
+//        long knownChildren = Math.min((long) n - 1, base + extra);
+//
+//        long totalKnown = 1 + knownChildren; // +1 表示根
+//        return totalKnown >= n;
 //    }
 //}
