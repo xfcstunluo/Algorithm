@@ -2,7 +2,7 @@ package WrittenExam.ShunFeng;
 
 import java.util.*;
 //前缀和+二分
-public class rShunFeng092101 {
+public class ShunFeng092101 {
     //两个长度为n的数组，其中a和b相乘得到新数组，询问新数组[l,r]的和。
     //a=[8,7,5,7],b=[2,2,1,3],new=[8,8,7,7,5,7,7,7];
     public static void main(String[] args) {
