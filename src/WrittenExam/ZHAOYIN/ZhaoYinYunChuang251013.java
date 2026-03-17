@@ -1,7 +1,9 @@
+package WrittenExam.ZHAOYIN;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class dictionaryForWords {
+public class ZhaoYinYunChuang251013 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str=sc.nextLine();
